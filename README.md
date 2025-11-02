@@ -46,4 +46,6 @@
    + Sau khi cài xong gõ: wsl -d Ubuntu để mở
    + Sau đó nhập lần lượt: Enter new UNIX username và New password
    + Sau khi nhập xong username và password sẽ hiển thị: khanh@DESKTOP-7I4R9SM:/mnt/c/Windows/System32$
-  ![Uploading image.png…]()
+  
+  ![Uploading Screenshot 2025-11-02 223419.png…]()
+
