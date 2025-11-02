@@ -64,7 +64,8 @@
 ### Bước 3: Bật tích hợp Docker với Ubuntu (trong Docker Desktop)
 - Mở Docker Desktop
 - Vào Settings -> Chọn General: Tick ✅ “Use the WSL 2 based engine”
-<img width="1095" height="636" alt="image" src="https://github.com/user-attachments/assets/e7befc1d-68e9-41bb-a9e5-2074ce0f5049" />
+
+![Uploading Screenshot 2025-11-02 232825.png…]()
 
 - Chuyển sang tab Resources -> Chọn WSL Integration:
   + Tick ✅ “Enable integration with my default WSL distro”
@@ -85,4 +86,21 @@
   + Mở Ubuntu (WSL) mà bạn vừa bật integration → gõ: docker version hoặc docker run hello-world
 
  ![Uploading Screenshot 2025-11-02 234312.png…]()
+
+- Tạo thư mục project để chứa web app
+  + Trong Ubuntu nhập: 
+  
+  mkdir -p ~/projects/webapp
+  cd ~/projects/webapp
+
+  + Đây sẽ là nơi bạn lưu file docker-compose.yml và các file web (index.html,...)
+## 2. Cài đặt Docker (nếu dùng docker desktop trên windows thì nó có ngay) (Đã làm chi tiết ở ý 1)
+- Truy cập link: https://www.docker.com/ -> nhấn Download
+- Sau khi tải về sẽ hiển thị file:<img width="752" height="40" alt="Screenshot 2025-11-02 231058" src="https://github.com/user-attachments/assets/86c138e1-45d5-43f6-b8d6-0287dae9db19" />
+- Nhấp đúp vào tệp cài đặt Docker Desktop -> chọn Yes khi hộp thoại cấp quyền quản trị xuất hiện.
+- Sau khi Docker Desktop khởi động, chọn Accept để đồng ý với các điều khoản sử dụng.
+- Tiếp theo, đăng nhập bằng tài khoản Google/ GitHub của bạn hoặc đăng ký tài khoản mới nếu chưa có.
+- Kết quả khi cài đặt xong Docker Destop
+
+## 3. Sử dụng 1 file docker-compose.yml để cài đặt các docker container sau: mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
 
