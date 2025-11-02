@@ -1,4 +1,4 @@
-# Đậu Văn Khánh - K225480106099
+<img width="1584" height="894" alt="image" src="https://github.com/user-attachments/assets/03fa1b39-8d19-4f61-b290-f901193cd4d2" /># Đậu Văn Khánh - K225480106099
 # YÊU CẦU: LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
 ## 1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
  - enable wsl: cài đặt docker desktop
@@ -46,13 +46,43 @@
 - Sau khi cài xong gõ: wsl -d Ubuntu để mở
 - Sau đó nhập lần lượt: Enter new UNIX username và New password
 - Sau khi nhập xong username và password sẽ hiển thị: khanh@DESKTOP-7I4R9SM:/mnt/c/Windows/System32$
-  
-![Uploading Screenshot 2025-11-02 223419.png…]()
+
+<img width="1098" height="430" alt="Screenshot 2025-11-02 223419" src="https://github.com/user-attachments/assets/d6cd50be-ba50-4767-bca9-be42567144c9" />
 
 - Sau đó chạy lệnh: sudo apt update và sudo apt upgrade -y
 
 ### Bước 2: Cài đặt Docker Destop
 - Truy cập link: https://www.docker.com/ -> nhấn Download
 - Sau khi tải về sẽ hiển thị file:<img width="752" height="40" alt="Screenshot 2025-11-02 231058" src="https://github.com/user-attachments/assets/86c138e1-45d5-43f6-b8d6-0287dae9db19" />
+- Nhấp đúp vào tệp cài đặt Docker Desktop -> chọn Yes khi hộp thoại cấp quyền quản trị xuất hiện.
+- Sau khi Docker Desktop khởi động, chọn Accept để đồng ý với các điều khoản sử dụng.
+- Tiếp theo, đăng nhập bằng tài khoản Google/ GitHub của bạn hoặc đăng ký tài khoản mới nếu chưa có.
+- Kết quả khi cài đặt xong Docker Destop
 
+<img width="875" height="599" alt="Screenshot 2025-11-02 231639" src="https://github.com/user-attachments/assets/197e0d09-44d5-4608-9b90-83b2b03ee975" />
+
+### Bước 3: Bật tích hợp Docker với Ubuntu (trong Docker Desktop)
+- Mở Docker Desktop
+- Vào Settings -> Chọn General: Tick ✅ “Use the WSL 2 based engine”
+<img width="1095" height="636" alt="image" src="https://github.com/user-attachments/assets/e7befc1d-68e9-41bb-a9e5-2074ce0f5049" />
+
+- Chuyển sang tab Resources -> Chọn WSL Integration:
+  + Tick ✅ “Enable integration with my default WSL distro”
+  + Tick ✅ dòng Ubuntu hoặc Ubuntu-22.04
+
+ <img width="1584" height="894" alt="image" src="https://github.com/user-attachments/assets/cc97860c-6ac7-4dd6-9d59-ac481a3f9fa8" />
+
+- Nhấn Apply & Restart
+-> Sau khi restart, Docker Desktop sẽ tự động kết nối với Ubuntu qua WSL2.
+ 
+- Kiểm tra Ubuntu:
+  + Mở cmd (quyền Admin) và nhập: wsl --list --verbose
+  + Kết quả:
+
+![Uploading Screenshot 2025-11-02 234006.png…]()
+
+- Kiểm tra Docker trong Ubuntu
+  + Mở Ubuntu (WSL) mà bạn vừa bật integration → gõ: docker version hoặc docker run hello-world
+
+ ![Uploading Screenshot 2025-11-02 234312.png…]()
 
