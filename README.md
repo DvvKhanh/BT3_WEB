@@ -1,4 +1,4 @@
-<img width="752" height="40" alt="image" src="https://github.com/user-attachments/assets/3b5710b0-dd74-4016-a00f-27b93c68077c" /># Đậu Văn Khánh - K225480106099
+# Đậu Văn Khánh - K225480106099
 # YÊU CẦU: LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
 ## 1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
  - enable wsl: cài đặt docker desktop
@@ -53,5 +53,6 @@
 
 ### Bước 2: Cài đặt Docker Destop
 - Truy cập link: https://www.docker.com/ -> nhấn Download
-- Sau khi tải về sẽ hiển thị file:
+- Sau khi tải về sẽ hiển thị file:<img width="752" height="40" alt="Screenshot 2025-11-02 231058" src="https://github.com/user-attachments/assets/86c138e1-45d5-43f6-b8d6-0287dae9db19" />
+
 
