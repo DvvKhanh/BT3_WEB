@@ -1,4 +1,4 @@
-# Đậu Văn Khánh - K225480106099
+<img width="752" height="40" alt="image" src="https://github.com/user-attachments/assets/3b5710b0-dd74-4016-a00f-27b93c68077c" /># Đậu Văn Khánh - K225480106099
 # YÊU CẦU: LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
 ## 1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
  - enable wsl: cài đặt docker desktop
@@ -41,11 +41,17 @@
 
 # BÀI LÀM
 ## 1. Cài đặt môi trường linux
-- Cài đặt Ubuntu:
-   + Mở cmd (quyền Admin) và gõ: wsl --install để cài Ubuntu
-   + Sau khi cài xong gõ: wsl -d Ubuntu để mở
-   + Sau đó nhập lần lượt: Enter new UNIX username và New password
-   + Sau khi nhập xong username và password sẽ hiển thị: khanh@DESKTOP-7I4R9SM:/mnt/c/Windows/System32$
+### Bước 1: Cài đặt Ubuntu:
+- Mở cmd (quyền Admin) và gõ: wsl --install để cài Ubuntu
+- Sau khi cài xong gõ: wsl -d Ubuntu để mở
+- Sau đó nhập lần lượt: Enter new UNIX username và New password
+- Sau khi nhập xong username và password sẽ hiển thị: khanh@DESKTOP-7I4R9SM:/mnt/c/Windows/System32$
   
-  ![Uploading Screenshot 2025-11-02 223419.png…]()
+![Uploading Screenshot 2025-11-02 223419.png…]()
+
+- Sau đó chạy lệnh: sudo apt update và sudo apt upgrade -y
+
+### Bước 2: Cài đặt Docker Destop
+- Truy cập link: https://www.docker.com/ -> nhấn Download
+- Sau khi tải về sẽ hiển thị file:
 
