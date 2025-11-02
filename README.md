@@ -40,3 +40,10 @@
  - Cấu hình nginx để http://fullname.com/grafana truy cập vào grafana qua cổng 80, (dù grafana đang chạy ở port 3000)
 
 # BÀI LÀM
+## 1. Cài đặt môi trường linux
+- Cài đặt Ubuntu:
+   + Mở cmd (quyền Admin) và gõ: wsl --install để cài Ubuntu
+   + Sau khi cài xong gõ: wsl -d Ubuntu để mở
+   + Sau đó nhập lần lượt: Enter new UNIX username và New password
+   + Sau khi nhập xong username và password sẽ hiển thị: khanh@DESKTOP-7I4R9SM:/mnt/c/Windows/System32$
+  ![Uploading image.png…]()
