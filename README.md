@@ -71,7 +71,7 @@
   + Tick ✅ “Enable integration with my default WSL distro”
   + Tick ✅ dòng Ubuntu hoặc Ubuntu-22.04
 
- <img width="1584" height="894" alt="image" src="https://github.com/user-attachments/assets/cc97860c-6ac7-4dd6-9d59-ac481a3f9fa8" />
+![Uploading Screenshot 2025-11-02 233059.png…]()
 
 - Nhấn Apply & Restart
 -> Sau khi restart, Docker Desktop sẽ tự động kết nối với Ubuntu qua WSL2.
@@ -80,20 +80,13 @@
   + Mở cmd (quyền Admin) và nhập: wsl --list --verbose
   + Kết quả:
 
-![Uploading Screenshot 2025-11-02 234006.png…]()
+<img width="1096" height="629" alt="image" src="https://github.com/user-attachments/assets/1b7ff9ab-1c66-4281-8eeb-768515eb31b0" />
 
 - Kiểm tra Docker trong Ubuntu
   + Mở Ubuntu (WSL) mà bạn vừa bật integration → gõ: docker version hoặc docker run hello-world
 
  ![Uploading Screenshot 2025-11-02 234312.png…]()
 
-- Tạo thư mục project để chứa web app
-  + Trong Ubuntu nhập: 
-  
-  mkdir -p ~/projects/webapp
-  cd ~/projects/webapp
-
-  + Đây sẽ là nơi bạn lưu file docker-compose.yml và các file web (index.html,...)
 ## 2. Cài đặt Docker (nếu dùng docker desktop trên windows thì nó có ngay) (Đã làm chi tiết ở ý 1)
 - Truy cập link: https://www.docker.com/ -> nhấn Download
 - Sau khi tải về sẽ hiển thị file:<img width="752" height="40" alt="Screenshot 2025-11-02 231058" src="https://github.com/user-attachments/assets/86c138e1-45d5-43f6-b8d6-0287dae9db19" />
