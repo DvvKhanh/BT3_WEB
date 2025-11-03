@@ -114,12 +114,8 @@
 
 ### 3.2. Cấu trúc thư mục dự án
 - Tạo cấu trúc thư mục như sau:
-iot_docker/
-├── docker-compose.yml
-├── nginx/
-│   └── nginx.conf
-├── mariadb_data/
-├── nodered_data/
-├── influxdb_data/
-├── grafana_data/
-└── README.md
+<img width="264" height="283" alt="image" src="https://github.com/user-attachments/assets/af597003-2ea5-41f4-85e2-619ce53aea77" />
+💡 Các thư mục *_data được mount vào container để lưu dữ liệu bền vững (persistent data).
+
+### 3.3. Các bước thực hiện chi tiết
+#### Bước 1: Tạo thư mục dự án và di chuyển vào
