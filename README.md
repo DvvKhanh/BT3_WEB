@@ -110,6 +110,16 @@
 | **Grafana**    | 3000      | Giao diện phân tích, hiển thị dữ liệu InfluxDB |
 | **Nginx**      | 80, 443   | Máy chủ web front-end (reverse proxy)          |
 
+- Tất cả được cài đặt thông qua một file docker-compose.yml duy nhất, giúp dễ dàng quản lý và triển khai.
 
-Tất cả được cài đặt thông qua một file docker-compose.yml duy nhất, giúp dễ dàng quản lý và triển khai.
-![Uploading image.png…]()
+### 3.2. Cấu trúc thư mục dự án
+- Tạo cấu trúc thư mục như sau:
+iot_docker/
+├── docker-compose.yml
+├── nginx/
+│   └── nginx.conf
+├── mariadb_data/
+├── nodered_data/
+├── influxdb_data/
+├── grafana_data/
+└── README.md
