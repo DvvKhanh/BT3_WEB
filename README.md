@@ -65,13 +65,13 @@
 - Mở Docker Desktop
 - Vào Settings -> Chọn General: Tick ✅ “Use the WSL 2 based engine”
 
-![Uploading Screenshot 2025-11-02 232825.png…]()
+<img width="1584" height="893" alt="Screenshot 2025-11-02 232825" src="https://github.com/user-attachments/assets/8e6516df-3d41-4cd1-aed9-140763b51fb4" />
 
 - Chuyển sang tab Resources -> Chọn WSL Integration:
   + Tick ✅ “Enable integration with my default WSL distro”
   + Tick ✅ dòng Ubuntu hoặc Ubuntu-22.04
 
-![Uploading Screenshot 2025-11-02 233059.png…]()
+<img width="1576" height="892" alt="Screenshot 2025-11-02 233059" src="https://github.com/user-attachments/assets/2bb7f2aa-9bb3-4b36-ad0c-8089b1212269" />
 
 - Nhấn Apply & Restart
 -> Sau khi restart, Docker Desktop sẽ tự động kết nối với Ubuntu qua WSL2.
@@ -85,7 +85,7 @@
 - Kiểm tra Docker trong Ubuntu
   + Mở Ubuntu (WSL) mà bạn vừa bật integration → gõ: docker version hoặc docker run hello-world
 
- ![Uploading Screenshot 2025-11-02 234312.png…]()
+ <img width="1472" height="755" alt="Screenshot 2025-11-02 234312" src="https://github.com/user-attachments/assets/cbe210be-d14e-45a8-90f3-5685a2efbfe3" />
 
 ## 2. Cài đặt Docker (nếu dùng docker desktop trên windows thì nó có ngay) (Đã làm chi tiết ở ý 1)
 - Truy cập link: https://www.docker.com/ -> nhấn Download
@@ -94,6 +94,8 @@
 - Sau khi Docker Desktop khởi động, chọn Accept để đồng ý với các điều khoản sử dụng.
 - Tiếp theo, đăng nhập bằng tài khoản Google/ GitHub của bạn hoặc đăng ký tài khoản mới nếu chưa có.
 - Kết quả khi cài đặt xong Docker Destop
+
+<img width="875" height="599" alt="Screenshot 2025-11-02 231639" src="https://github.com/user-attachments/assets/197e0d09-44d5-4608-9b90-83b2b03ee975" />
 
 ## 3. Sử dụng 1 file docker-compose.yml để cài đặt các docker container sau: mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
 
