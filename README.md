@@ -276,9 +276,11 @@ http {
 
 ![Uploading image.png…]()
 
-### 5. Kiểm tra kết quả
+### 3.4. Kiểm tra kết quả
 - Node-RED: http://localhost:1880
 - Grafana:	http://localhost:3000
 - phpMyAdmin:	http://localhost:8080
 - InfluxDB:	http://localhost:8086
 - Nginx:	http://localhost
+
+## 4. Lập trình web frontend+backend:
