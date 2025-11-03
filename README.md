@@ -69,7 +69,7 @@
 
 - Chuyển sang tab Resources -> Chọn WSL Integration:
   + Tick ✅ “Enable integration with my default WSL distro”
-  + Tick ✅ dòng Ubuntu hoặc Ubuntu-22.04
+  + Bật Ubuntu hoặc Ubuntu-22.04
 
 <img width="1576" height="892" alt="Screenshot 2025-11-02 233059" src="https://github.com/user-attachments/assets/2bb7f2aa-9bb3-4b36-ad0c-8089b1212269" />
 
