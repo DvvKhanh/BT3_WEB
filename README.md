@@ -119,3 +119,165 @@
 
 ### 3.3. Các bước thực hiện chi tiết
 #### Bước 1: Tạo thư mục dự án và di chuyển vào
+```
+mkdir ~/iot_docker
+cd ~/iot_docker
+```
+#### Bước 2: Tạo file docker-compose.yml
+- Mở Ubuntu
+- Nhập lệnh: nano docker-compose.yml để tạo file
+- Viết code:
+```
+  services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: iotdb
+      MYSQL_USER: iotuser
+      MYSQL_PASSWORD: iotpass
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mariadb_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: root123
+    ports:
+      - "8080:80"
+    depends_on:
+      mariadb:
+        condition: service_healthy
+
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered
+    restart: unless-stopped
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./nodered_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "node -v || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  influxdb:
+    image: influxdb:2.7
+    container_name: influxdb
+    restart: unless-stopped
+    ports:
+      - "8086:8086"
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: admin123
+      DOCKER_INFLUXDB_INIT_ORG: iot_org
+      DOCKER_INFLUXDB_INIT_BUCKET: iot_bucket
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: my-token
+    volumes:
+      - ./influxdb_data:/var/lib/influxdb2
+    healthcheck:
+      test: ["CMD-SHELL", "curl -sfS http://localhost:8086/health || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - influxdb
+    volumes:
+      - ./grafana_data:/var/lib/grafana
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin123
+      GF_USERS_ALLOW_SIGN_UP: "false"
+    healthcheck:
+      test: ["CMD-SHELL", "grafana-cli -v || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "8088:80"    # nếu 80 bị chiếm, dùng 8088 trên host
+      - "4443:443"   # https host port 4443
+    volumes:
+      - ./nginx_conf:/etc/nginx/conf.d:ro
+      - ./html:/usr/share/nginx/html:ro
+    depends_on:
+      - grafana
+      - nodered
+      - phpmyadmin
+
+networks:
+  default:
+    driver: bridge
+```
+-> Nhấn Ctrl + O -> Enter để lưu lại, Ctrl + X để thoát ra
+
+#### Bước 3: Tạo các thư mục dữ liệu: mkdir -p mariadb_data nodered_data influxdb_data grafana_data nginx
+
+#### Bước 4: Tạo file cấu hình nginx.conf
+- Chạy lệnh: nano nginx/nginx.conf để tạo file
+- Chạy code:
+```
+events { }
+
+http {
+    server {
+        listen 80;
+        location / {
+            root /usr/share/nginx/html;
+            index index.html;
+        }
+
+        location /grafana/ {
+            proxy_pass http://grafana:3000/;
+        }
+
+        location /nodered/ {
+            proxy_pass http://nodered:1880/;
+        }
+    }
+}
+```
+-> Nhấn Ctrl + O -> Enter để lưu lại, Ctrl + X để thoát ra
+
+#### Bước 5: Khởi động tất cả container
+- Chạy lệnh: docker compose up -d để khởi động
+
+
+#### Bước 6: Kiểm tra trạng thái
+- Chạy lệnh: docker ps để kiểm tra trạng thái
+
+![Uploading image.png…]()
+
+### 5. Kiểm tra kết quả
+- Node-RED: http://localhost:1880
+- Grafana:	http://localhost:3000
+- phpMyAdmin:	http://localhost:8080
+- InfluxDB:	http://localhost:8086
+- Nginx:	http://localhost
