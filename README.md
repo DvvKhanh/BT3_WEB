@@ -98,4 +98,18 @@
 <img width="875" height="599" alt="Screenshot 2025-11-02 231639" src="https://github.com/user-attachments/assets/197e0d09-44d5-4608-9b90-83b2b03ee975" />
 
 ## 3. Sử dụng 1 file docker-compose.yml để cài đặt các docker container sau: mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
+### 3.1. Mục tiêu và yêu cầu
+- Mục đích của phần này là triển khai nhanh hệ thống IoT web server gồm 6 container hoạt động đồng thời bằng Docker Compose, bao gồm:
 
+| Tên dịch vụ    | Cổng host | Mục đích                                       |
+| -------------- | --------- | ---------------------------------------------- |
+| **MariaDB**    | 3306      | Cơ sở dữ liệu chính                            |
+| **phpMyAdmin** | 8080      | Giao diện web quản lý MariaDB                  |
+| **Node-RED**   | 1880      | Nền tảng IoT Flow                              |
+| **InfluxDB**   | 8086      | Cơ sở dữ liệu time-series lưu dữ liệu cảm biến |
+| **Grafana**    | 3000      | Giao diện phân tích, hiển thị dữ liệu InfluxDB |
+| **Nginx**      | 80, 443   | Máy chủ web front-end (reverse proxy)          |
+
+
+Tất cả được cài đặt thông qua một file docker-compose.yml duy nhất, giúp dễ dàng quản lý và triển khai.
+![Uploading image.png…]()
