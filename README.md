@@ -269,12 +269,13 @@ http {
 
 #### Bước 5: Khởi động tất cả container
 - Chạy lệnh: docker compose up -d để khởi động
-
+  
+<img width="1475" height="293" alt="Screenshot 2025-11-03 223359" src="https://github.com/user-attachments/assets/f62ea1f7-96cb-4d18-8f10-dc42865ef429" />
 
 #### Bước 6: Kiểm tra trạng thái
 - Chạy lệnh: docker ps để kiểm tra trạng thái
 
-![Uploading image.png…]()
+<img width="1487" height="292" alt="Screenshot 2025-11-03 230457" src="https://github.com/user-attachments/assets/7fbebc5b-6084-449c-8b10-23f1cf372093" />
 
 ### 3.4. Kiểm tra kết quả
 - Node-RED: http://localhost:1880
