@@ -129,16 +129,18 @@ cd ~/iot_docker
 - Nhập lệnh: nano docker-compose.yml để tạo file
 - Viết code:
 ```
-  services:
+  version: "3.8"
+
+services:
   mariadb:
     image: mariadb:10.11
     container_name: mariadb
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: root123
-      MYSQL_DATABASE: iotdb
-      MYSQL_USER: iotuser
-      MYSQL_PASSWORD: iotpass
+      MYSQL_ROOT_PASSWORD: root123       # root password
+      MYSQL_DATABASE: ecommerce              # tạo database mặc định
+      MYSQL_USER: khanh                # user bình thường
+      MYSQL_PASSWORD: 123456            # password user bình thường
     ports:
       - "3306:3306"
     volumes:
@@ -155,8 +157,10 @@ cd ~/iot_docker
     restart: unless-stopped
     environment:
       PMA_HOST: mariadb
-      PMA_USER: root
+      PMA_PORT: 3306
+      PMA_USER: root          # dùng root để có quyền admin
       PMA_PASSWORD: root123
+      PMA_ARBITRARY: 1        # cho phép thao tác mọi database
     ports:
       - "8080:80"
     depends_on:
