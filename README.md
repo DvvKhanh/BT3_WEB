@@ -410,7 +410,7 @@ http {
 
 <img width="696" height="755" alt="image" src="https://github.com/user-attachments/assets/3abf712b-5302-446f-a08b-08227385b89a" />
 
-+ Tính năng liệt kế sản phẩm theo nhóm
++ Tính năng liệt kê sản phẩm theo nhóm
 
 <img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/0f93a1d9-50a0-4bde-990e-49f46b20e959" />
 
@@ -421,7 +421,9 @@ http {
 + Tính năng chọn sản phẩm (đưa sản phẩm vào giỏ hàng, thay đổi số lượng sản phẩm trong giỏ, cập nhật tổng tiền)
   + Thêm sản phẩm vào giỏ hàng
     
-  <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/0b02982e-dbd7-4657-adab-d8652cbe7e8e" />
+  <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/0b02982e-dbd7-4657-adab-d8652cbe7e8e" /></p>
+
+  <img width="1893" height="1099" alt="Screenshot 2025-11-06 224131" src="https://github.com/user-attachments/assets/0b0f6c73-24af-481e-a512-942038b3a4f7" />
 
   + Thay đổi số lượng sản phẩ trong giỏ hàng và cập nhật tổng tiền
  
