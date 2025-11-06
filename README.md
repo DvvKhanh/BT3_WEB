@@ -57,9 +57,9 @@
 - Nhấp đúp vào tệp cài đặt Docker Desktop -> chọn Yes khi hộp thoại cấp quyền quản trị xuất hiện.
 - Sau khi Docker Desktop khởi động, chọn Accept để đồng ý với các điều khoản sử dụng.
 - Tiếp theo, đăng nhập bằng tài khoản Google/ GitHub của bạn hoặc đăng ký tài khoản mới nếu chưa có.
-- Kết quả khi cài đặt xong Docker Destop
+- Giao diện Docker Destop:
 
-<img width="875" height="599" alt="Screenshot 2025-11-02 231639" src="https://github.com/user-attachments/assets/197e0d09-44d5-4608-9b90-83b2b03ee975" />
+<img width="1593" height="905" alt="Screenshot 2025-11-03 203055" src="https://github.com/user-attachments/assets/bf185195-9764-472a-b7d1-f2ca56b802b8" />
 
 ### Bước 3: Bật tích hợp Docker với Ubuntu (trong Docker Desktop)
 - Mở Docker Desktop
