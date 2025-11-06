@@ -310,14 +310,17 @@ http {
 <img width="1581" height="894" alt="Screenshot 2025-11-06 065403" src="https://github.com/user-attachments/assets/b9038579-3b5f-41f5-96e8-db8653c15481" />
 
 ## 4. Lập trình web frontend+backend:
-- Bước 1: Tạo CSDL gồm DB: web, các bảng: Categories, Orders, Orders_Items, Products, Users
+### 4.1: Tạo CSDL gồm DB: web, các bảng: Categories, Orders, Orders_Items, Products, Users
   + Mở phpMyAdmin http://localhost:8080
   
  <img width="1772" height="620" alt="Screenshot 2025-11-06 110613" src="https://github.com/user-attachments/assets/17dc2ca3-c6ff-420c-a9f7-ff2d53d615c4" />
 
-- Bước 2: Tạo Node-RED backend — import flow (REST API)
-  + Mở Node-RED http://localhost:1880. Vào Menu → Manage palette install:
-    + node-red-node-mysql (MySQL)
-    + node-red-contrib-influxdb (nếu muốn viết metrics to Influx)
-    + node-red-contrib-jwt
-  + 
+## 4.2: Tạo Node-RED backend — import flow (REST API)
+  + Mở Node-RED http://localhost:1880. Vào Menu → Manage palette install để cài 1 số thư viện:
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/07157958-d5e9-47d6-8e27-2dd59db9426b" />
+
+  + Tạo nodered login:
+
+<img width="1249" height="533" alt="image" src="https://github.com/user-attachments/assets/d06b2763-fb57-4244-a4b9-263047bc35a9" />
+
