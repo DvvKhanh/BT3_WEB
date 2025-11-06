@@ -1,4 +1,4 @@
-<img width="1879" height="1052" alt="image" src="https://github.com/user-attachments/assets/14d55735-417b-4f21-9f77-770e67a360dd" /># Đậu Văn Khánh - K225480106099
+# Đậu Văn Khánh - K225480106099
 # YÊU CẦU: LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
 ## 1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
  - enable wsl: cài đặt docker desktop
