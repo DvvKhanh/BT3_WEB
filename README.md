@@ -468,6 +468,8 @@ http {
 
 - Nodered
 
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/7bd6e62f-ce5f-477e-afce-5a47e175b994" />
+
 - Grafana
   + Đăng nhập:
   
