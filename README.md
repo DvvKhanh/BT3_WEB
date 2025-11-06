@@ -129,7 +129,7 @@ cd ~/iot_docker
 - Nhập lệnh: nano docker-compose.yml để tạo file
 - Viết code:
 ```
-  version: "3.8"
+version: "3.8"
 
 services:
   mariadb:
@@ -137,19 +137,23 @@ services:
     container_name: mariadb
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: root123       # root password
-      MYSQL_DATABASE: ecommerce              # tạo database mặc định
-      MYSQL_USER: khanh                # user bình thường
-      MYSQL_PASSWORD: 123456            # password user bình thường
+      # SỬ DỤNG GIÁ TRỊ CỐ ĐỊNH
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: web
+      MYSQL_USER: khanh
+      MYSQL_PASSWORD: 123456
     ports:
       - "3306:3306"
     volumes:
       - ./mariadb_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      # SỬ DỤNG GIÁ TRỊ CỐ ĐỊNH TRONG LỆNH PING
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p123456"]
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - iot_network
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -158,14 +162,17 @@ services:
     environment:
       PMA_HOST: mariadb
       PMA_PORT: 3306
-      PMA_USER: root          # dùng root để có quyền admin
-      PMA_PASSWORD: root123
-      PMA_ARBITRARY: 1        # cho phép thao tác mọi database
+      PMA_USER: root
+      # SỬ DỤNG GIÁ TRỊ CỐ ĐỊNH
+      PMA_PASSWORD: 123456
+      PMA_ARBITRARY: 1
     ports:
       - "8080:80"
     depends_on:
       mariadb:
         condition: service_healthy
+    networks:
+      - iot_network
 
   nodered:
     image: nodered/node-red:latest
@@ -176,10 +183,12 @@ services:
     volumes:
       - ./nodered_data:/data
     healthcheck:
-      test: ["CMD-SHELL", "node -v || exit 1"]
+      test: ["CMD", "curl", "-f", "http://localhost:1880/"]
       interval: 30s
       timeout: 10s
       retries: 3
+    networks:
+      - iot_network
 
   influxdb:
     image: influxdb:2.7
@@ -190,17 +199,21 @@ services:
     environment:
       DOCKER_INFLUXDB_INIT_MODE: setup
       DOCKER_INFLUXDB_INIT_USERNAME: admin
+      # SỬ DỤNG GIÁ TRỊ CỐ ĐỊNH
       DOCKER_INFLUXDB_INIT_PASSWORD: admin123
       DOCKER_INFLUXDB_INIT_ORG: iot_org
       DOCKER_INFLUXDB_INIT_BUCKET: iot_bucket
+      # SỬ DỤNG GIÁ TRỊ CỐ ĐỊNH
       DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: my-token
     volumes:
       - ./influxdb_data:/var/lib/influxdb2
     healthcheck:
-      test: ["CMD-SHELL", "curl -sfS http://localhost:8086/health || exit 1"]
+      test: ["CMD", "curl", "-f", "http://localhost:8086/health"]
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - iot_network
 
   grafana:
     image: grafana/grafana:latest
@@ -214,31 +227,38 @@ services:
       - ./grafana_data:/var/lib/grafana
     environment:
       GF_SECURITY_ADMIN_USER: admin
+      # SỬ DỤNG GIÁ TRỊ CỐ ĐỊNH
       GF_SECURITY_ADMIN_PASSWORD: admin123
       GF_USERS_ALLOW_SIGN_UP: "false"
     healthcheck:
-      test: ["CMD-SHELL", "grafana-cli -v || exit 1"]
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://localhost:3000/api/health"]
       interval: 15s
       timeout: 5s
       retries: 3
+    networks:
+      - iot_network
 
   nginx:
     image: nginx:latest
     container_name: nginx
     restart: unless-stopped
     ports:
-      - "8088:80"    # nếu 80 bị chiếm, dùng 8088 trên host
-      - "4443:443"   # https host port 4443
+      - "8088:80"
+      - "4443:443"
     volumes:
-      - ./nginx_conf:/etc/nginx/conf.d:ro
-      - ./html:/usr/share/nginx/html:ro
+      # LƯU Ý: Nginx mặc định dùng conf.d/default.conf, tôi sẽ dùng tên file này.
+      # Đảm bảo file cấu hình của bạn là ./nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro 
+      - ./nginx/html:/usr/share/nginx/html:ro
     depends_on:
       - grafana
       - nodered
       - phpmyadmin
+    networks:
+      - iot_network
 
 networks:
-  default:
+  iot_network:
     driver: bridge
 ```
 -> Nhấn Ctrl + O -> Enter để lưu lại, Ctrl + X để thoát ra
@@ -286,6 +306,18 @@ http {
 - Grafana:	http://localhost:3000
 - phpMyAdmin:	http://localhost:8080
 - InfluxDB:	http://localhost:8086
-- Nginx:	http://localhost
+
+<img width="1581" height="894" alt="Screenshot 2025-11-06 065403" src="https://github.com/user-attachments/assets/b9038579-3b5f-41f5-96e8-db8653c15481" />
 
 ## 4. Lập trình web frontend+backend:
+- Bước 1: Tạo CSDL gồm DB: web, các bảng: Categories, Orders, Orders_Items, Products, Users
+  + Mở phpMyAdmin http://localhost:8080
+  
+ <img width="1772" height="620" alt="Screenshot 2025-11-06 110613" src="https://github.com/user-attachments/assets/17dc2ca3-c6ff-420c-a9f7-ff2d53d615c4" />
+
+- Bước 2: Tạo Node-RED backend — import flow (REST API)
+  + Mở Node-RED http://localhost:1880. Vào Menu → Manage palette install:
+    + node-red-node-mysql (MySQL)
+    + node-red-contrib-influxdb (nếu muốn viết metrics to Influx)
+    + node-red-contrib-jwt
+  + 
