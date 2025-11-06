@@ -478,3 +478,45 @@ http {
   + Giao diện chính:
 
 <img width="1920" height="1200" alt="Screenshot 2025-11-06 232441" src="https://github.com/user-attachments/assets/85fd781a-e197-4965-a793-3bab4e122bcc" />
+
+# KẾT LUẬN:
+   Sau khi hoàn thành đề tài, em đã xây dựng thành công một hệ thống web thương mại điện tử theo mô hình Frontend + Backend, đáp ứng đầy đủ các yêu cầu của bài toán đề ra.
+Cụ thể, hệ thống gồm giao diện người dùng (SPA) được xây dựng hoàn toàn bằng HTML, CSS, JavaScript, và backend sử dụng Node-RED để xử lý logic, truy vấn cơ sở dữ liệu MariaDB, đồng thời phản hồi dữ liệu dưới dạng JSON API.
+
+🔸 Các kết quả đạt được:
+  - Thiết lập thành công môi trường backend Node-RED
+    + Cài đặt Node-RED bằng Docker, cấu hình adminAuth để bảo mật trang quản trị.
+    + Tạo các flow xử lý login, đăng ký, giỏ hàng, đặt hàng, thống kê đơn hàng.
+  - Kết nối và quản lý cơ sở dữ liệu MariaDB
+    + Tạo các bảng: nguoidung, sanpham, giohang, donhang, chitiet_donhang.
+    + Quản lý dữ liệu bằng phpMyAdmin, đảm bảo tính toàn vẹn và nhất quán dữ liệu.
+  - Xây dựng giao diện web SPA động
+    + Sử dụng JavaScript để sinh toàn bộ giao diện từ dữ liệu JSON.
+    + Giao diện có các tính năng: đăng nhập, tìm kiếm, xem sản phẩm theo nhóm, thêm vào giỏ hàng, đặt hàng, xem thống kê.
+  - Thực hiện cơ chế đăng nhập bảo mật
+    + Mã hóa thông tin đăng nhập khi gửi lên backend.
+    + Lưu trạng thái đăng nhập bằng cookie và session, chỉ đăng nhập lại khi logout.
+  - Tích hợp chức năng dành cho admin
+    + Admin có thể xem danh sách đơn hàng, cập nhật tình trạng, mã COD, hoặc hủy đơn.
+    + Xem biểu đồ thống kê số lượng hàng bán ra mỗi ngày bằng Grafana kết nối với Node-RED.
+
+🔸 Kết quả đạt được
+  - Hệ thống đã vận hành ổn định, đảm bảo:
+     + Phản hồi nhanh giữa frontend – backend thông qua REST API.
+     + Giao diện trực quan, thân thiện với người dùng.
+     + Cấu trúc mã dễ mở rộng cho các tính năng quản trị sau này.
+     + Tích hợp tốt với cơ sở dữ liệu MariaDB và công cụ giám sát Grafana.
+
+🔸 Hướng phát triển trong tương lai
+  - Tích hợp cổng thanh toán online (Momo, VNPay).
+  - Bổ sung trang quản trị nâng cao cho admin (quản lý người dùng, sản phẩm, thống kê).
+  - Tối ưu giao diện web cho thiết bị di động (responsive).
+  - Nâng cấp bảo mật đăng nhập bằng JWT Token thay cho session truyền thống.
+
+🔸 Tổng kết
+  - Đề tài giúp em hiểu sâu hơn về:
+    + Cấu trúc hệ thống web hiện đại (Frontend–Backend–Database).
+    + Cách sử dụng Node-RED làm backend xử lý logic và API.
+    + Cách kết nối và thao tác cơ sở dữ liệu MariaDB.
+    + Cách triển khai web SPA bằng JavaScript và API JSON.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
