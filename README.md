@@ -310,7 +310,7 @@ http {
 <img width="1581" height="894" alt="Screenshot 2025-11-06 065403" src="https://github.com/user-attachments/assets/b9038579-3b5f-41f5-96e8-db8653c15481" />
 
 ## 4. Lập trình web frontend+backend:
-### 4.1: Tạo CSDL gồm DB: web, các bảng: Categories, Orders, Orders_Items, Products, Users
+### 4.1. Tạo CSDL gồm DB: web, các bảng: Categories, Orders, Orders_Items, Products, Users
   + Mở phpMyAdmin http://localhost:8080
   
 <img width="1772" height="620" alt="Screenshot 2025-11-06 110613" src="https://github.com/user-attachments/assets/17dc2ca3-c6ff-420c-a9f7-ff2d53d615c4" />
@@ -335,7 +335,7 @@ http {
 
 <img width="1504" height="639" alt="image" src="https://github.com/user-attachments/assets/0977b6cd-9808-41c9-a54d-351c5a530840" />
 
-## 4.2: Tạo Node-RED backend — import flow (REST API)
+## 4.2. Tạo Node-RED backend — import flow (REST API)
 + Mở Node-RED http://localhost:1880. Vào Menu → Manage palette install để cài 1 số thư viện:
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/07157958-d5e9-47d6-8e27-2dd59db9426b" />
@@ -360,4 +360,19 @@ http {
 
 <img width="1232" height="435" alt="image" src="https://github.com/user-attachments/assets/fdf2e764-eeb2-49b0-a0ca-a52be7c8ffdc" />
 
+## 4.3. Code html
++ code index.html (Giao diện đăng nhập vào hệ thống):
+
+<img width="1919" height="850" alt="image" src="https://github.com/user-attachments/assets/b3e7b434-98c1-4e31-83a7-d0206b42872d" />
+
++ code dashboard.html (Giao diện web thương mại điện tử sau khi đăng nhập):
+
+<img width="1919" height="855" alt="image" src="https://github.com/user-attachments/assets/192d3253-73ca-4d79-a951-69f0942ebdab" />
+
+## 4.4. Giao diện web
++ Giao diện đăng nhập
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8e256b32-24bb-4dfc-8993-40725b6125b7" />
+
++ Giao diện web của Admin
 
