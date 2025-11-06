@@ -1,4 +1,4 @@
-# Đậu Văn Khánh - K225480106099
+<img width="1879" height="1052" alt="image" src="https://github.com/user-attachments/assets/14d55735-417b-4f21-9f77-770e67a360dd" /># Đậu Văn Khánh - K225480106099
 # YÊU CẦU: LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
 ## 1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
  - enable wsl: cài đặt docker desktop
@@ -335,32 +335,52 @@ http {
 
 <img width="1504" height="639" alt="image" src="https://github.com/user-attachments/assets/0977b6cd-9808-41c9-a54d-351c5a530840" />
 
-## 4.2. Tạo Node-RED backend — import flow (REST API)
-+ Mở Node-RED http://localhost:1880. Vào Menu → Manage palette install để cài 1 số thư viện:
+### 4.2. Tạo Node-RED backend — import flow (REST API)
+1. Mở Node-RED http://localhost:1880. Vào Menu → Manage palette install để cài 1 số thư viện:
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/07157958-d5e9-47d6-8e27-2dd59db9426b" />
 
-+ Tạo nodered login:
+2. Tạo nodered login:
 
 <img width="1249" height="533" alt="image" src="https://github.com/user-attachments/assets/d06b2763-fb57-4244-a4b9-263047bc35a9" />
 
-+ Tạo nodered liệt kê sản phẩm, các sản phẩm bán chạy nhất, các nhóm sản phẩm
+3. Tạo nodered liệt kê sản phẩm, các sản phẩm bán chạy nhất, các nhóm sản phẩm
 
 <img width="1426" height="757" alt="image" src="https://github.com/user-attachments/assets/45bf18f3-fd46-4221-96a5-74685a6696d5" />
 
-+ Tạo nodered tìm kiếm sản phẩm:
++ Kiểm tra API:
+   + Liệt kê sản phẩm:
+   <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/ea62321b-5ec7-46bd-ab6f-b6b4eb41053c" />
+
+   + Các sản phẩm bán chạy nhất:
+  
+   <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/53bfa559-6613-4cfd-8d57-7bae86d80094" />
+
+   + Các nhóm sản phẩm:
+
+   <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/bb7e2df6-2419-4afe-8205-e5e1609fcfc2" />
+
+4. Tạo nodered tìm kiếm sản phẩm:
 
 <img width="1307" height="375" alt="image" src="https://github.com/user-attachments/assets/e7fe33ce-bcaa-4ab6-9812-086ddf3f162e" />
 
-+ Tạo nodered đặt hàng:
++ Kiểm tra API:
+
+<img width="690" height="1097" alt="image" src="https://github.com/user-attachments/assets/c187f396-f70f-443b-95af-fcd1df2d910a" />
+
+5. Tạo nodered đặt hàng:
 
 <img width="1411" height="483" alt="image" src="https://github.com/user-attachments/assets/0c81e445-46a6-44c3-a4a2-554129fa4b7c" />
 
-+ Tạo nodered xem đơn hàng:
+6. Tạo nodered xem đơn hàng:
 
-<img width="1232" height="435" alt="image" src="https://github.com/user-attachments/assets/fdf2e764-eeb2-49b0-a0ca-a52be7c8ffdc" />
+<img width="1211" height="806" alt="image" src="https://github.com/user-attachments/assets/5a19cf44-9b5d-4114-8591-f073d13ed468" />
 
-## 4.3. Code html
++ Kiểm tra API:
+
+<img width="690" height="1097" alt="Screenshot 2025-11-06 223419" src="https://github.com/user-attachments/assets/2c2a5e97-a5f6-40aa-b07d-66e84f805fd7" />
+
+### 4.3. Code html
 + code index.html (Giao diện đăng nhập vào hệ thống):
 
 <img width="1919" height="850" alt="image" src="https://github.com/user-attachments/assets/b3e7b434-98c1-4e31-83a7-d0206b42872d" />
@@ -369,10 +389,57 @@ http {
 
 <img width="1919" height="855" alt="image" src="https://github.com/user-attachments/assets/192d3253-73ca-4d79-a951-69f0942ebdab" />
 
-## 4.4. Giao diện web
+### 4.4. Giao diện web
 + Giao diện đăng nhập
 
-<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/8e256b32-24bb-4dfc-8993-40725b6125b7" />
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/e6bdff16-d422-429c-ab11-67d46e2931bb" />
 
 + Giao diện web của Admin
 
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/58c8f99a-a403-4e30-9cfb-3cdd34e77b89" />
+
++ Giao diện web của Customer
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/9d6d5ce7-bcfd-4966-a421-9f4e2bdffcf0" />
+
++ Tính năng liệt kê các sản phẩm bán chạy ra trang chủ
+
+<img width="1897" height="1053" alt="image" src="https://github.com/user-attachments/assets/237ead2f-f22b-4c38-b42f-7765c31136e0" />
+
++ Tính năng liệt kê các nhóm sản phẩm
+
+<img width="696" height="755" alt="image" src="https://github.com/user-attachments/assets/3abf712b-5302-446f-a08b-08227385b89a" />
+
++ Tính năng liệt kế sản phẩm theo nhóm
+
+<img width="1919" height="873" alt="image" src="https://github.com/user-attachments/assets/0f93a1d9-50a0-4bde-990e-49f46b20e959" />
+
++ Tính năng tìm kiếm sản phẩm
+
+<img width="1919" height="1052" alt="image" src="https://github.com/user-attachments/assets/709dec3d-9bd4-4c19-9575-d103a87c8a58" />
+
++ Tính năng chọn sản phẩm (đưa sản phẩm vào giỏ hàng, thay đổi số lượng sản phẩm trong giỏ, cập nhật tổng tiền)
+  + Thêm sản phẩm vào giỏ hàng
+    
+  <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/0b02982e-dbd7-4657-adab-d8652cbe7e8e" />
+
+  + Thay đổi số lượng sản phẩ trong giỏ hàng và cập nhật tổng tiền
+ 
+  <img width="1895" height="1046" alt="image" src="https://github.com/user-attachments/assets/195b2ba5-1756-4e2e-a4a2-188d8e51c01e" />
+
++ Tính năng đặt hàng, nhập thông tin giao hàng
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/587acf76-f1de-44a0-bf2c-6853d97f5e90" />
+
+-> Sau khi đặt hàng, dữ liệu sẽ tự động hiển thị trong sql
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/d4ebfc71-fc9c-420d-8c4c-5d507f3a67a0" />
+
++ Tính năng dành cho admin: Thống kê xem có bao nhiêu đơn hàng, call để xác nhận và cập nhật thông tin đơn hàng. chuyển cho bộ phận đóng gói, gửi bưu điện, cập nhật mã COD, tình trạng giao hàng, huỷ hàng,...
+
+<img width="1881" height="1049" alt="image" src="https://github.com/user-attachments/assets/414a97d6-00de-4455-8381-a11a97bb63f8" />
+
++ Tính năng dành cho admin: biểu đồ thống kê số lượng mặt hàng bán được trong từng ngày
+
+
+## 5. Nginx làm web-server
