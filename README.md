@@ -442,6 +442,8 @@ http {
 <img width="1881" height="1049" alt="image" src="https://github.com/user-attachments/assets/414a97d6-00de-4455-8381-a11a97bb63f8" />
 
 + Tính năng dành cho admin: biểu đồ thống kê số lượng mặt hàng bán được trong từng ngày
+  
+<img width="1268" height="457" alt="image" src="https://github.com/user-attachments/assets/ca331b7c-47f4-4b38-9a36-d4846ef2b18a" />
 
 
 ## 5. Nginx làm web-server
