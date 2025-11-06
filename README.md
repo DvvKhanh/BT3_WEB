@@ -447,3 +447,32 @@ http {
 
 
 ## 5. Nginx làm web-server
+### 5.1. Cấu hình nginx để chạy được website qua url http://dauvankhanh.com
+  + Truy cập đường dẫn: C:\Windows\System32\drivers\etc\hosts -> thêm dòng 127.0.0.1 dauvankhanh.com
+  
+<img width="808" height="759" alt="Screenshot 2025-11-06 230426" src="https://github.com/user-attachments/assets/3cee7b5d-4b3e-4cd4-a470-b2e35a793a74" />
+
+### 5.2. Cấu hình nginx để http://fullname.com/nodered truy cập vào nodered qua cổng 80
+   + Vào file nginx.conf -> sửa server_name localhost thành server_name dauvankhanh.com;
+
+  <img width="1920" height="1200" alt="Screenshot 2025-11-06 230511" src="https://github.com/user-attachments/assets/7795da24-0166-40c1-826e-15be7f2394e0" />
+
+### 5.3. Cấu hình nginx để http://fullname.com/grafana truy cập vào grafana qua cổng 80
+
+<img width="881" height="575" alt="image" src="https://github.com/user-attachments/assets/21773f0b-089a-4b68-abbb-75a6902984ec" />
+
+### 5.4. Kết quả
+- Website
+
+<img width="1920" height="1200" alt="Screenshot 2025-11-06 230910" src="https://github.com/user-attachments/assets/6468e2e5-a759-4dfa-a718-268a65b4fcdd" />
+
+- Nodered
+
+- Grafana
+  + Đăng nhập:
+  
+<img width="1920" height="1200" alt="Screenshot 2025-11-06 232412" src="https://github.com/user-attachments/assets/bcc9804a-f8f2-4e03-93c6-d5fcd7744868" />
+
+  + Giao diện chính:
+
+<img width="1920" height="1200" alt="Screenshot 2025-11-06 232441" src="https://github.com/user-attachments/assets/85fd781a-e197-4965-a793-3bab4e122bcc" />
