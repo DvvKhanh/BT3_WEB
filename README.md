@@ -313,14 +313,51 @@ http {
 ### 4.1: Tạo CSDL gồm DB: web, các bảng: Categories, Orders, Orders_Items, Products, Users
   + Mở phpMyAdmin http://localhost:8080
   
- <img width="1772" height="620" alt="Screenshot 2025-11-06 110613" src="https://github.com/user-attachments/assets/17dc2ca3-c6ff-420c-a9f7-ff2d53d615c4" />
+<img width="1772" height="620" alt="Screenshot 2025-11-06 110613" src="https://github.com/user-attachments/assets/17dc2ca3-c6ff-420c-a9f7-ff2d53d615c4" />
+
+  + Bảng Categories:
+
+<img width="1063" height="816" alt="image" src="https://github.com/user-attachments/assets/c9d94c26-58e9-441a-b3af-3164d9ffb9fc" />
+
+  + Bảng Orders:
+
+<img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/2a8e6208-ae04-460c-829c-dd4ce643a9eb" />
+
+  + Bảng Orders_Items:
+
+<img width="1534" height="1019" alt="image" src="https://github.com/user-attachments/assets/fe1ea4cf-4796-45c1-b059-35fc848e16d0" />
+
+  + Bảng Products:
+
+<img width="1738" height="1066" alt="image" src="https://github.com/user-attachments/assets/d330968c-9ce9-4350-a0f5-ecb512ca9dae" />
+
+  + Bảng Users:
+
+<img width="1504" height="639" alt="image" src="https://github.com/user-attachments/assets/0977b6cd-9808-41c9-a54d-351c5a530840" />
 
 ## 4.2: Tạo Node-RED backend — import flow (REST API)
-  + Mở Node-RED http://localhost:1880. Vào Menu → Manage palette install để cài 1 số thư viện:
++ Mở Node-RED http://localhost:1880. Vào Menu → Manage palette install để cài 1 số thư viện:
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/07157958-d5e9-47d6-8e27-2dd59db9426b" />
 
-  + Tạo nodered login:
++ Tạo nodered login:
 
 <img width="1249" height="533" alt="image" src="https://github.com/user-attachments/assets/d06b2763-fb57-4244-a4b9-263047bc35a9" />
+
++ Tạo nodered liệt kê sản phẩm, các sản phẩm bán chạy nhất, các nhóm sản phẩm
+
+<img width="1426" height="757" alt="image" src="https://github.com/user-attachments/assets/45bf18f3-fd46-4221-96a5-74685a6696d5" />
+
++ Tạo nodered tìm kiếm sản phẩm:
+
+<img width="1307" height="375" alt="image" src="https://github.com/user-attachments/assets/e7fe33ce-bcaa-4ab6-9812-086ddf3f162e" />
+
++ Tạo nodered đặt hàng:
+
+<img width="1411" height="483" alt="image" src="https://github.com/user-attachments/assets/0c81e445-46a6-44c3-a4a2-554129fa4b7c" />
+
++ Tạo nodered xem đơn hàng:
+
+<img width="1232" height="435" alt="image" src="https://github.com/user-attachments/assets/fdf2e764-eeb2-49b0-a0ca-a52be7c8ffdc" />
+
 
